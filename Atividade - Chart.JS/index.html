@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>RA: 01232163 - Giulia Carmona</title>
+</head>
+<body style="display: flex;">
+  <div>
+    <canvas class="chart-container" style="position: relative; height:40vh; width:50vw" id="myChartLine"></canvas>
+  </div>
+  <div>
+    <canvas class="chart-container" style="position: relative; height:40vh; width:50vw" id="myChartBar"></canvas>
+  </div>  
+</body>
+</html>
+<script>
+  const ctx = document.getElementById('myChartLine');
+  const ctx2 = document.getElementById('myChartBar');
+  
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: 'Temperatura',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [30, 29, 28, 25, 22, 23],
+        borderWidth: 1
+      },{
+        label: 'Umidade',
+        backgroundColor: 'rgb(0, 168, 255)',
+        borderColor: 'rgb(0, 168, 255)',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 1
+      },{
+        label: 'Umidade',
+        backgroundColor: 'rgb(0, 168, 255)',
+        borderColor: 'rgb(0, 168, 255)',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+</script> 
